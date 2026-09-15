@@ -1,6 +1,6 @@
-# Admiz Agency - Digital Marketing Landing Page
+# Razr - Digital Marketing Landing Page
 
-A modern, responsive landing page for **Admiz Agency** - a digital marketing agency based in Delhi NCR.
+A modern, responsive landing page for **Razr** - a digital marketing agency based in Delhi NCR.
 
 ## Features
 
@@ -8,18 +8,19 @@ A modern, responsive landing page for **Admiz Agency** - a digital marketing age
 - 📊 Animated counters and progress bars
 - 🎨 Smooth scroll animations and particle effects
 - 📱 Fully responsive (mobile, tablet, desktop)
-- 💬 WhatsApp integration floating button
+- 💬 Telegram integration (@razrmarketing)
 - 📝 Contact form with validation
 - ❓ Interactive FAQ accordion
 - 🔝 Back-to-top button
 - 🎯 SEO optimized
+- 📈 Meta Pixel tracking with anti-fake click protection
 
 ## Sections
 
 1. **Header** - Fixed navigation with scroll effect
 2. **Hero** - Full-screen hero with stats card
 3. **Marquee** - Scrolling services banner
-4. **About** - Why choose Admiz Agency
+4. **About** - Why choose Razr
 5. **Stats** - Animated counter section
 6. **Services** - 6 detailed service cards
 7. **Courses** - Digital marketing course offerings
@@ -44,4 +45,4 @@ Simply open `index.html` in your browser. No build tools required.
 
 ## License
 
-© 2024-2026 Admiz Agency. All Rights Reserved.
+© 2024-2026 Razr. All Rights Reserved.

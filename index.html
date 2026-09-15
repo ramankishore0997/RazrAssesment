@@ -937,31 +937,52 @@
             var h = '<div class="_qfin">';
             h += '<div class="_chk">✓</div>';
             h += '<h3>Perfect Match Found! 🎯</h3>';
-            h += '<p>We have the best setup and pricing for your requirements.<br>Connect with us on Telegram now!</p>';
+            h += '<p>Your requirements are ready! Click below to connect on Telegram.<br><span style="color:#0088cc;font-size:12px;font-weight:600;display:inline-block;margin-top:4px;">📋 Details auto-copied — just Paste (Ctrl+V) in chat!</span></p>';
             h += '<button class="_wabtn" id="_waBtn" onclick="_goTG(event)"><i class="fab fa-telegram-plane" style="font-size:20px;margin-right:6px;"></i> Chat on Telegram (@razrmarketing)</button>';
             h += '</div>';
 
             bdy.innerHTML = h;
         }
 
-        // Go to Telegram with Meta Pixel Event Tracking
+        // Go to Telegram with Meta Pixel Event Tracking & Auto-Copy details
         window._goTG = function(e){
             var btn = document.getElementById('_waBtn');
             if(btn && btn.disabled) return;
 
-            // Anti-Fake Click Protection & Validation:
-            // 1. Ensure genuine user click event (isTrusted check)
-            var isUserEvent = !e || e.isTrusted !== false;
+            // 1. Build formatted lead message
+            var m = "Hello! I am looking for an Ad Account 👋\n\n";
+            m += "📋 *My Requirements:*\n";
+            m += "━━━━━━━━━━━━━━━\n";
+            m += "🎯 Ad Type: " + (_ans[0]||'-') + "\n";
+            m += "📱 Platform: " + (_ans[1]||'-') + "\n";
+            m += "🏢 Account Type: " + (_ans[2]||'-') + "\n";
+            m += "💰 Monthly Budget: " + (_ans[3]||'-') + "\n";
+            m += "📂 Niche/Industry: " + (_ans[4]||'-') + "\n";
+            m += "━━━━━━━━━━━━━━━\n\n";
+            m += "Please share account availability and pricing details. 🙏";
 
-            // 2. Ensure all 5 questions were actually answered
+            // 2. Auto-copy lead details to user's clipboard
+            try {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(m);
+                } else {
+                    var ta = document.createElement('textarea');
+                    ta.value = m;
+                    ta.style.position = 'fixed';
+                    ta.style.opacity = '0';
+                    document.body.appendChild(ta);
+                    ta.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(ta);
+                }
+            } catch(err){}
+
+            // 3. Anti-Fake Click Protection & Validation:
+            var isUserEvent = !e || e.isTrusted !== false;
             var answeredCount = Object.keys(_ans).length;
             var hasAllAnswers = answeredCount >= _tot && _ans[0] && _ans[1] && _ans[2] && _ans[3] && _ans[4];
-
-            // 3. Time spent validation (humans take at least 800ms to select options, instant bot clicks rejected)
             var durationMs = _quizStartTime ? (Date.now() - _quizStartTime) : 0;
             var isHumanDuration = durationMs >= 800 || !_quizStartTime;
-
-            // 4. Duplicate / Rapid spam prevention (60s cooldown per browser session)
             var now = Date.now();
             var isNotSpam = !window._lastWaLeadTrack || (now - window._lastWaLeadTrack > 60000);
 
@@ -1013,7 +1034,8 @@
 
             if(btn) {
                 btn.disabled = true;
-                btn.innerHTML = '<i class="fab fa-telegram-plane" style="font-size:20px;margin-right:6px;"></i> Opening Telegram...';
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied! Opening Telegram...';
+                btn.style.background = '#0088cc';
             }
 
             var url = "https://t.me/razrmarketing";
@@ -1021,7 +1043,7 @@
             setTimeout(function(){
                 window.open(url, '_blank');
                 _close();
-            }, 350);
+            }, 600);
         };
 
         var _timer = null;

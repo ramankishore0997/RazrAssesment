@@ -674,8 +674,8 @@
                     <div class="info-card">
                         <div class="info-icon"><i class="fab fa-telegram-plane"></i></div>
                         <div>
-                            <h4>Telegram</h4>
-                            <p><a href="https://t.me/razrmarketing" target="_blank" style="color:var(--primary); font-weight:600;">@razrmarketing</a></p>
+                            <h4>Telegram Bot</h4>
+                            <p><a href="https://t.me/razrmarketingbot" target="_blank" style="color:var(--primary); font-weight:600;">@razrmarketingbot</a></p>
                         </div>
                     </div>
                     <div class="info-card">
@@ -700,7 +700,7 @@
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="https://t.me/razrmarketing" target="_blank" class="social-icon" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="https://t.me/razrmarketingbot" target="_blank" class="social-icon" title="Telegram Bot"><i class="fab fa-telegram-plane"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
@@ -721,7 +721,7 @@
                     </a>
                     <p>Razr is a leading digital marketing agency in Delhi NCR, helping businesses grow through innovative digital strategies and data-driven marketing solutions.</p>
                     <div class="social-links">
-                        <a href="https://t.me/razrmarketing" target="_blank" class="social-icon" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="https://t.me/razrmarketingbot" target="_blank" class="social-icon" title="Telegram Bot"><i class="fab fa-telegram-plane"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
@@ -752,7 +752,7 @@
                     <h4>Contact Info</h4>
                     <ul>
                         <li><i class="fas fa-map-marker-alt"></i> Delhi NCR, India</li>
-                        <li><i class="fab fa-telegram-plane"></i> <a href="https://t.me/razrmarketing" target="_blank" style="color:inherit;">@razrmarketing</a></li>
+                        <li><i class="fab fa-telegram-plane"></i> <a href="https://t.me/razrmarketingbot" target="_blank" style="color:inherit;">@razrmarketingbot</a></li>
                         <li><i class="fas fa-phone"></i> +91 83779 50798</li>
                         <li><i class="fas fa-envelope"></i> info@razrmarketing.com</li>
                     </ul>
@@ -928,7 +928,7 @@
 
         var _quizStartTime = 0;
 
-        // Show final result with Telegram
+        // Show final result with Telegram Bot
         function _showResult(){
             var bdy = document.getElementById('_qbdy');
             var bars = document.getElementById('_qpr').children;
@@ -938,7 +938,7 @@
             h += '<div class="_chk">✓</div>';
             h += '<h3>Perfect Match Found! 🎯</h3>';
             h += '<p>Your requirements are ready! Click below to connect on Telegram.<br><span style="color:#0088cc;font-size:12px;font-weight:600;display:inline-block;margin-top:4px;">📋 Details auto-copied — just Paste (Ctrl+V) in chat!</span></p>';
-            h += '<button class="_wabtn" id="_waBtn" onclick="_goTG(event)"><i class="fab fa-telegram-plane" style="font-size:20px;margin-right:6px;"></i> Chat on Telegram (@razrmarketing)</button>';
+            h += '<button class="_wabtn" id="_waBtn" onclick="_goTG(event)"><i class="fab fa-telegram-plane" style="font-size:20px;margin-right:6px;"></i> Chat on Telegram (@razrmarketingbot)</button>';
             h += '</div>';
 
             bdy.innerHTML = h;
@@ -1034,11 +1034,11 @@
 
             if(btn) {
                 btn.disabled = true;
-                btn.innerHTML = '<i class="fas fa-check"></i> Copied! Opening Telegram...';
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied! Opening Bot...';
                 btn.style.background = '#0088cc';
             }
 
-            var url = "https://t.me/razrmarketing";
+            var url = "https://t.me/razrmarketingbot";
             
             setTimeout(function(){
                 window.open(url, '_blank');

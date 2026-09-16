@@ -8,7 +8,7 @@ A modern, responsive landing page for **Razr** - a digital marketing agency base
 - 📊 Animated counters and progress bars
 - 🎨 Smooth scroll animations and particle effects
 - 📱 Fully responsive (mobile, tablet, desktop)
-- 💬 Telegram integration (@razrmarketing)
+- 💬 Telegram Bot integration (@razrmarketingbot)
 - 📝 Contact form with validation
 - ❓ Interactive FAQ accordion
 - 🔝 Back-to-top button

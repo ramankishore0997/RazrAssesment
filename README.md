@@ -1,6 +1,6 @@
 # Razr - Digital Marketing Landing Page
 
-A modern, responsive landing page for **Razr** - a digital marketing agency based in Delhi NCR.
+A modern, responsive landing page for **Razr** - a digital marketing agency.
 
 ## Features
 

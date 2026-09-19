@@ -1041,7 +1041,7 @@
                 btn.innerHTML = '<i class="fas fa-check"></i> Copied! Opening Telegram...';
             }
 
-            var url = "https://t.me/razrmarketing";
+            var url = "https://t.me/razrmarketing?text=" + encodeURIComponent(m);
             
             setTimeout(function(){
                 window.open(url, '_blank');
